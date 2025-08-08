@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" class="scroll-smooth"> <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio Website - Dan Kirvy</title>
@@ -8,11 +7,12 @@
   <script src="https://cdn.tailwindcss.com"></script>
   </head>
 <body class="bg-gray-100 text-gray-800">
+
   <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 shadow-lg fixed-header">
     <div class="container mx-auto flex justify-between items-center px-6">
-      <h1 class="text-3xl font-extrabold animate-slideDown">Dan Kirvy's Portfolio</h1>
-      <nav>
-        <ul class="flex space-x-4">
+      <h1 class="text-2xl md:text-3xl font-extrabold animate-slideDown">Dan Kirvy's Portfolio</h1>
+      
+      <nav class="hidden md:block"> <ul class="flex space-x-4">
           <li><a href="#about" class="nav-link px-3 py-2 rounded-md hover:bg-white hover:bg-opacity-20 transition-all duration-300 animate-slideIn">About</a></li>
           <li><a href="#skills" class="nav-link px-3 py-2 rounded-md hover:bg-white hover:bg-opacity-20 transition-all duration-300 animate-slideIn">Skills</a></li>
           <li><a href="#projects" class="nav-link px-3 py-2 rounded-md hover:bg-white hover:bg-opacity-20 transition-all duration-300 animate-slideIn">Projects</a></li>
@@ -20,10 +20,25 @@
           <li><a href="#contact-section" class="nav-link px-3 py-2 rounded-md hover:bg-white hover:bg-opacity-20 transition-all duration-300 animate-slideIn" id="contact-nav">Contact</a></li>
         </ul>
       </nav>
+
+      <button id="menu-btn" class="md:hidden block focus:outline-none"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden"> <ul class="flex flex-col items-center py-4">
+        <li><a href="#about" class="nav-link-mobile block w-full text-center py-2">About</a></li>
+        <li><a href="#skills" class="nav-link-mobile block w-full text-center py-2">Skills</a></li>
+        <li><a href="#projects" class="nav-link-mobile block w-full text-center py-2">Projects</a></li>
+        <li><a href="#educ" class="nav-link-mobile block w-full text-center py-2">Education</a></li>
+        <li><a href="#contact-section" class="nav-link-mobile block w-full text-center py-2">Contact</a></li>
+      </ul>
     </div>
   </header>
 
-  <section class="bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-700 text-white pt-32 pb-20 px-8">
+
+  <section class="bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-700 text-white pt-32 pb-20 px-4 md:px-8">
     <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
       <div class="text-center md:text-left max-w-xl md:mr-10">
         <h4 class="text-2xl md:text-3xl mb-2 mt-4 animate-slideFromLeft">Hey there!</h4>
@@ -54,7 +69,7 @@
     </div>
   </section>
 
-  <section id="about" class="py-16 bg-white px-8">
+  <section id="about" class="py-16 bg-white px-4 md:px-8">
     <div class="container mx-auto text-center">
       <h2 class="section-title">About Me</h2>
       <p class="text-lg max-w-2xl mx-auto px-6 leading-relaxed">
@@ -68,7 +83,7 @@
     </div>
   </section>
 
-  <section id="skills" class="py-16 bg-gray-50 px-8">
+  <section id="skills" class="py-16 bg-gray-50 px-4 md:px-8">
     <div class="container mx-auto text-center">
       <h2 class="section-title">Skills</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -92,7 +107,7 @@
     </div>
   </section>
 
-  <section id="projects" class="py-16 bg-white px-8">
+  <section id="projects" class="py-16 bg-white px-4 md:px-8">
     <div class="container mx-auto">
       <h2 class="section-title text-center">Projects</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -122,7 +137,7 @@
     </div>
   </section>
 
-  <section id="educ" class="py-16 bg-gray-50 px-8">
+  <section id="educ" class="py-16 bg-gray-50 px-4 md:px-8">
     <div class="container mx-auto text-center">
       <h2 class="section-title">Educational Background</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -150,7 +165,7 @@
     </div>
   </section>
 
-  <section id="contact-section" class="py-16 bg-white px-8">
+  <section id="contact-section" class="py-16 bg-white px-4 md:px-8">
     <div class="container mx-auto text-center">
       <h2 class="section-title">Contact Me</h2>
       <p class="text-lg mb-8 px-6 leading-relaxed">Feel free to reach out to me via email, phone, or social media!</p>
@@ -218,10 +233,28 @@
       });
     }
 
-    // Highlight navigation links on scroll and click
+    // Main event listener for when the page loads
     window.addEventListener('DOMContentLoaded', () => {
       startTypingAnimation(); // Start typing animation on load
 
+      // --- Mobile Menu Toggle Logic --- // ADDED
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileLinks = document.querySelectorAll('.nav-link-mobile');
+
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Close mobile menu when a link is clicked
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+      });
+      // --- End Mobile Menu Logic --- //
+
+      // Highlight navigation links on scroll and click
       const sections = document.querySelectorAll('section[id]');
       const navLinks = document.querySelectorAll('nav ul li a.nav-link');
 
@@ -241,7 +274,6 @@
 
       navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-          // Optional: smooth scroll if not already handled by CSS html {scroll-behavior: smooth;}
           navLinks.forEach(navLink => navLink.classList.remove('active'));
           link.classList.add('active');
         });
