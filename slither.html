@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slither: The Snake Game</title>
+<style>
+body {
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+}
+
+canvas {
+  background-color: #333;
+  border: 2px solid #555;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#scoreboard {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+#scoreboard h2 {
+  margin: 0;
+}
+
+#dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.difficulty-button {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#game-area {
+  display: none;
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="dashboard">
+    <h1>Slither</h1>
+    <button class="difficulty-button" id="easy">Easy</button>
+    <button class="difficulty-button" id="normal">Normal</button>
+    <button class="difficulty-button" id="hard">Hard</button>
+  </div>
+  <div id="game-area">
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <div id="scoreboard">
+      <h2>Slither</h2>
+      Score: <span id="score">0</span><br>
+      High Score: <span id="highScore">0</span>
+    </div>
+  </div>
+  <script>
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+const scoreDisplay = document.getElementById('score');
+const highScoreDisplay = document.getElementById('highScore');
+const gameArea = document.getElementById('game-area');
+const easyButton = document.getElementById('easy');
+const normalButton = document.getElementById('normal');
+const hardButton = document.getElementById('hard');
+const dashboard = document.getElementById('dashboard');
+
+const gridSize = 20;
+const gridWidth = canvas.width / gridSize;
+const gridHeight = canvas.height / gridSize;
+
+let snake = [{ x: 10, y: 10 }];
+let food = generateFood();
+let dx = 1;
+let dy = 0;
+let score = 0;
+let highScore = 0;
+let gameLoopInterval;
+let gameSpeed = 100; // Default speed
+
+function generateFood() {
+  let x, y;
+  do {
+    x = Math.floor(Math.random() * gridWidth);
+    y = Math.floor(Math.random() * gridHeight);
+  } while (snake.some(segment => segment.x === x && segment.y === y));
+  return { x, y };
+}
+
+function drawSnake() {
+  ctx.fillStyle = 'lime';
+  snake.forEach(segment => {
+    ctx.fillRect(segment.x * gridSize, segment.y * gridSize, gridSize, gridSize);
+  });
+}
+
+function drawFood() {
+  ctx.fillStyle = 'red';
+  ctx.fillRect(food.x * gridSize, food.y * gridSize, gridSize, gridSize);
+}
+
+function moveSnake() {
+  const head = { x: snake[0].x + dx, y: snake[0].y + dy };
+  snake.unshift(head);
+
+  if (head.x === food.x && head.y === food.y) {
+    score++;
+    scoreDisplay.textContent = score;
+    highScore = Math.max(highScore, score);
+    highScoreDisplay.textContent = highScore;
+    food = generateFood();
+  } else {
+    snake.pop();
+  }
+
+  if (head.x < 0 || head.x >= gridWidth || head.y < 0 || head.y >= gridHeight || checkSelfCollision(head)) {
+    clearInterval(gameLoopInterval);
+    alert('Game Over! Score: ' + score);
+    if (typeof(Storage) !== "undefined") {
+      localStorage.setItem("highScore", highScore);
+    }
+  }
+}
+
+function checkSelfCollision(head) {
+  return snake.slice(1).some(segment => segment.x === head.x && segment.y === head.y);
+}
+
+function gameLoop() {
+  moveSnake();
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawSnake();
+  drawFood();
+}
+
+document.addEventListener('keydown', (event) => {
+  switch (event.key) {
+    case 'ArrowUp':
+    case 'w':
+      if (dy !== 1) { dx = 0; dy = -1; }
+      break;
+    case 'ArrowDown':
+    case 's':
+      if (dy !== -1) { dx = 0; dy = 1; }
+      break;
+    case 'ArrowLeft':
+    case 'a':
+      if (dx !== 1) { dx = -1; dy = 0; }
+      break;
+    case 'ArrowRight':
+    case 'd':
+      if (dx !== -1) { dx = 1; dy = 0; }
+      break;
+  }
+});
+
+function setDifficulty(speed) {
+    gameSpeed = speed;
+    clearInterval(gameLoopInterval);
+    gameLoopInterval = setInterval(gameLoop, gameSpeed);
+}
+
+easyButton.addEventListener('click', () => {
+    setDifficulty(150);
+    dashboard.style.display = 'none';
+    gameArea.style.display = 'block';
+});
+normalButton.addEventListener('click', () => {
+    setDifficulty(100);
+    dashboard.style.display = 'none';
+    gameArea.style.display = 'block';
+});
+hardButton.addEventListener('click', () => {
+    setDifficulty(75);
+    dashboard.style.display = 'none';
+    gameArea.style.display = 'block';
+});
+
+
+if (typeof(Storage) !== "undefined") {
+  highScore = parseInt(localStorage.getItem("highScore")) || 0;
+  highScoreDisplay.textContent = highScore;
+}
+
+gameArea.style.display = 'none';
+  </script>
+</body>
+</html>

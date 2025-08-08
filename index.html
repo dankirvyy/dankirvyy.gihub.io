@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Website - Dan Kirvy</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 shadow-lg fixed-header">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-3xl font-extrabold animate-slideDown">Dan Kirvy's Portfolio</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="#about" class="nav-link px-3 py-2 rounded-md hover:bg-white hover:bg-opacity-20 transition-all duration-300 animate-slideIn">About</a></li>
+          <li><a href="#skills" class="nav-link px-3 py-2 rounded-md hover:bg-white hover:bg-opacity-20 transition-all duration-300 animate-slideIn">Skills</a></li>
+          <li><a href="#projects" class="nav-link px-3 py-2 rounded-md hover:bg-white hover:bg-opacity-20 transition-all duration-300 animate-slideIn">Projects</a></li>
+          <li><a href="#educ" class="nav-link px-3 py-2 rounded-md hover:bg-white hover:bg-opacity-20 transition-all duration-300 animate-slideIn">Education</a></li>
+          <li><a href="#contact-section" class="nav-link px-3 py-2 rounded-md hover:bg-white hover:bg-opacity-20 transition-all duration-300 animate-slideIn" id="contact-nav">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-700 text-white pt-32 pb-20 px-8">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+      <div class="text-center md:text-left max-w-xl md:mr-10">
+        <h4 class="text-2xl md:text-3xl mb-2 mt-4 animate-slideFromLeft">Hey there!</h4>
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-4 animate-slideFromLeft">I'm Dan Kirvy P. Manongsong</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 animate-slideFromLeft">
+          <span id="typing-text" class="typing"></span>
+        </h2>
+        <p class="text-lg mb-8 animate-slideFromLeft leading-relaxed">A passionate web development student eager to learn and create beautiful,
+          functional websites. With a growing knowledge of design principles, user-friendly interfaces, and coding best practices,
+          I strive to turn ideas into simple and engaging digital experiences.
+          Every project is a step forward in mastering the art of web development, and I'm excited for what's ahead!</p>
+        <div class="social-links-hero flex space-x-5 justify-center md:justify-start mb-8">
+          <a href="https://www.facebook.com/dankirvy.manongsong.5" class="social-icon-hero animate-bounceIn" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8"><path d="M12 2.03998C6.48 2.03998 2 6.51998 2 12.04C2 17.08 5.64 21.22 10.44 21.91V14.89H7.9V12.04H10.44V9.83998C10.44 7.33998 11.93 5.95998 14.22 5.95998C15.31 5.95998 16.45 6.14998 16.45 6.14998V8.61998H15.19C13.95 8.61998 13.56 9.38998 13.56 10.18V12.04H16.34L15.89 14.89H13.56V21.9C18.36 21.21 22 17.07 22 12.04C22 6.51998 17.52 2.03998 12 2.03998Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/dankirvyyy/" class="social-icon-hero animate-bounceIn" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8"><path d="M12 2C8.74003 2 8.35303 2.014 7.12903 2.072C5.89803 2.132 5.01803 2.317 4.21803 2.621C3.41603 2.926 2.77303 3.383 2.12903 4.028C1.48303 4.672 1.02603 5.314 0.721031 6.116C0.418031 6.917 0.232031 7.797 0.172031 9.027C0.114031 10.252 0.100031 10.639 0.100031 13.9C0.100031 17.161 0.114031 17.548 0.172031 18.772C0.232031 20.002 0.418031 20.882 0.721031 21.682C1.02603 22.484 1.48303 23.127 2.12903 23.772C2.77303 24.417 3.41603 24.874 4.21803 25.179C5.01803 25.482 5.89803 25.668 7.12903 25.728C8.35303 25.786 8.74003 25.8 12 25.8C15.2600 25.8 15.6470 25.786 16.8710 25.728C18.1020 25.668 18.9820 25.482 19.7820 25.179C20.5840 24.874 21.2270 24.417 21.8710 23.772C22.5170 23.127 22.9740 22.484 23.2790 21.682C23.5820 20.882 23.7680 20.002 23.8280 18.772C23.8860 17.548 24.0000 17.161 24.0000 13.9C24.0000 10.639 23.8860 10.252 23.8280 9.027C23.7680 7.797 23.5820 6.917 23.2790 6.116C22.9740 5.314 22.5170 4.672 21.8710 4.028C21.2270 3.383 20.5840 2.926 19.7820 2.621C18.9820 2.317 18.1020 2.132 16.8710 2.072C15.6470 2.014 15.2600 2 12 2ZM12 4.062C15.1690 4.062 15.5210 4.075 16.6980 4.132C17.7730 4.185 18.4570 4.353 18.9180 4.517C19.4880 4.722 19.8780 4.971 20.2720 5.365C20.6660 5.759 20.9150 6.15 21.1200 6.719C21.2840 7.18 21.4520 7.865 21.5050 8.94C21.5620 10.117 21.5750 10.469 21.5750 13.638C21.5750 16.807 21.5620 17.158 21.5050 18.335C21.4520 19.411 21.2840 20.095 21.1200 20.556C20.9150 21.126 20.6660 21.516 20.2720 21.91C19.8780 22.304 19.4880 22.553 18.9180 22.758C18.4570 22.922 17.7730 23.09 16.6980 23.143C15.5210 23.199 15.1690 23.213 12 23.213C8.83103 23.213 8.47903 23.199 7.30203 23.143C6.22703 23.09 5.54303 22.922 5.08203 22.758C4.51203 22.553 4.12203 22.304 3.72803 21.91C3.33403 21.516 3.08503 21.126 2.88003 20.556C2.71603 20.095 2.54803 19.411 2.49503 18.335C2.43803 17.158 2.42503 16.807 2.42503 13.638C2.42503 10.469 2.43803 10.117 2.49503 8.94C2.54803 7.865 2.71603 7.18 2.88003 6.719C3.08503 6.15 3.33403 5.759 3.72803 5.365C4.12203 4.971 4.51203 4.722 5.08203 4.517C5.54303 4.353 6.22703 4.185 7.30203 4.132C8.47903 4.075 8.83103 4.062 12 4.062ZM12 9.479C10.0200 9.479 8.41703 11.082 8.41703 13.062C8.41703 15.042 10.0200 16.646 12 16.646C13.9800 16.646 15.5830 15.042 15.5830 13.062C15.5830 11.082 13.9800 9.479 12 9.479ZM12 14.583C11.1500 14.583 10.4790 13.913 10.4790 13.062C10.4790 12.212 11.1500 11.542 12 11.542C12.8500 11.542 13.5210 12.212 13.5210 13.062C13.5210 13.913 12.8500 14.583 12 14.583ZM18.2920 7.833C18.2920 8.507 17.7490 9.052 17.0730 9.052C16.3980 9.052 15.8540 8.507 15.8540 7.833C15.8540 7.158 16.3980 6.614 17.0730 6.614C17.7490 6.614 18.2920 7.158 18.2920 7.833Z"/></svg>
+          </a>
+        </div>
+        <a href="#projects" class="hero-button animate-slideUp">View My Work</a>
+      </div>
+
+      <div class="flex-shrink-0 mt-10 md:mt-0 animate-zoomIn">
+        <img src="photos/PF.jpg"
+             alt="Dan Kirvy's Profile Picture"
+             class="hero-image rounded-full w-64 h-64 md:w-[350px] md:h-[350px] shadow-lg transition-shadow duration-300 ease-in-out hover:shadow-[0_5px_25px_rgba(255,255,255,0.3)]">
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-16 bg-white px-8">
+    <div class="container mx-auto text-center">
+      <h2 class="section-title">About Me</h2>
+      <p class="text-lg max-w-2xl mx-auto px-6 leading-relaxed">
+        Hello! I'm Dan Kirvy P. Manongsong, a dedicated and creative web developer
+        with a passion for crafting user-friendly and visually appealing websites.
+        With a strong foundation in HTML, CSS, JavaScript, and frameworks like Tailwind CSS,
+        I strive to deliver exceptional digital experiences. I enjoy solving complex problems and turning ideas
+        into reality. When I'm not coding, I love exploring new technologies, reading about design trends, and
+        collaborating with like-minded individuals to create impactful projects.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills" class="py-16 bg-gray-50 px-8">
+    <div class="container mx-auto text-center">
+      <h2 class="section-title">Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="skill-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" class="mx-auto mb-4 w-16 h-16">
+          <p class="font-bold text-lg">HTML</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS" class="mx-auto mb-4 w-16 h-16">
+          <p class="font-bold text-lg">CSS</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" class="mx-auto mb-4 w-16 h-16">
+          <p class="font-bold text-lg">JavaScript</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png" alt="Tailwind" class="mx-auto mb-4 w-16 h-16">
+          <p class="font-bold text-lg">Tailwind CSS</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="py-16 bg-white px-8">
+    <div class="container mx-auto">
+      <h2 class="section-title text-center">Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="project-card">
+          <h3 class="text-xl font-bold mb-3 px-2">Slither Game</h3>
+          <img src="photos/Screenshot 2025-03-26 141634.png" alt="Slither Game Image" class="project-image">
+          <p class="text-sm mb-5 px-4 leading-relaxed">Slither is a simple snake game where players control a snake that moves across the screen, eating items to grow longer. The objective is to navigate the snake carefully, avoiding collisions with walls or its own tail.</p>
+          <a href="slither.html" class="project-button">View Live</a>
+        </div>
+
+        <div class="project-card">
+          <h3 class="text-xl font-bold mb-3 px-2">Interactive Heart</h3>
+          <img src="photos/interactive_heart.png" alt="Interactive Heart Image" class="project-image">
+          <p class="text-sm mb-5 px-4 leading-relaxed">An interactive heart animation that follows your cursor. A fun exploration of JavaScript and canvas. (ctto)</p>
+          <a href="Heart/interactive-heart-animation.html" class="project-button">View Live</a>
+        </div>
+
+        <div class="project-card">
+          <h3 class="text-xl font-bold mb-3 px-2">Will You Be My Valentine?</h3>
+          <img src="photos/Cute.png" alt="Cute Image" class="project-image">
+          <p class="text-sm mb-5 px-4 leading-relaxed">A playful interactive page asking a very important question! (ctto)</p>
+          <a href="valentine/index.html" class="project-button">View Live</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="educ" class="py-16 bg-gray-50 px-8">
+    <div class="container mx-auto text-center">
+      <h2 class="section-title">Educational Background</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="education-card">
+          <h3 class="text-xl font-bold mb-3 px-2">Primary Education</h3>
+          <img src="photos/Batino ES.png" alt="Batino ES Photo" class="education-image">
+          <p class="text-base mb-2 px-4">Batino Elementary School</p>
+          <p class="text-sm text-gray-600 px-4">S.Y 2009 - 2017</p>
+        </div>
+        <div class="education-card">
+          <h3 class="text-xl font-bold mb-3 px-2">Secondary Education</h3>
+          <img src="photos/MNHS.jpg" alt="MNHS Photo" class="education-image">
+          <p class="text-base mb-1 px-4">Managpi National High School</p>
+          <p class="text-sm text-gray-600 px-4 mb-2">General Academic Strand (GAS)</p>
+          <p class="text-sm text-gray-600 px-4">S.Y 2017 - 2023</p>
+        </div>
+        <div class="education-card md:col-span-2 lg:col-span-1">
+          <h3 class="text-xl font-bold mb-3 px-2">Tertiary Education</h3>
+          <img src="photos/MinSU.jpg" alt="MinSU Photo" class="education-image">
+          <p class="text-base mb-1 px-4">Mindoro State University (MinSU)</p>
+          <p class="text-sm text-gray-600 px-4 mb-2">Bachelor of Science in Information Technology (BSIT)</p>
+          <p class="text-sm text-gray-600 px-4">S.Y 2023 - Current</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact-section" class="py-16 bg-white px-8">
+    <div class="container mx-auto text-center">
+      <h2 class="section-title">Contact Me</h2>
+      <p class="text-lg mb-8 px-6 leading-relaxed">Feel free to reach out to me via email, phone, or social media!</p>
+      <div class="social-links-contact flex justify-center space-x-6 mb-6">
+        <a href="https://www.facebook.com/dankirvy.manongsong.5" class="social-icon-contact" aria-label="Facebook">
+           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-9 h-9"><path d="M12 2.03998C6.48 2.03998 2 6.51998 2 12.04C2 17.08 5.64 21.22 10.44 21.91V14.89H7.9V12.04H10.44V9.83998C10.44 7.33998 11.93 5.95998 14.22 5.95998C15.31 5.95998 16.45 6.14998 16.45 6.14998V8.61998H15.19C13.95 8.61998 13.56 9.38998 13.56 10.18V12.04H16.34L15.89 14.89H13.56V21.9C18.36 21.21 22 17.07 22 12.04C22 6.51998 17.52 2.03998 12 2.03998Z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/dankirvyyy/" class="social-icon-contact" aria-label="Instagram">
+           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-9 h-9"><path d="M12 2C8.74003 2 8.35303 2.014 7.12903 2.072C5.89803 2.132 5.01803 2.317 4.21803 2.621C3.41603 2.926 2.77303 3.383 2.12903 4.028C1.48303 4.672 1.02603 5.314 0.721031 6.116C0.418031 6.917 0.232031 7.797 0.172031 9.027C0.114031 10.252 0.100031 10.639 0.100031 13.9C0.100031 17.161 0.114031 17.548 0.172031 18.772C0.232031 20.002 0.418031 20.882 0.721031 21.682C1.02603 22.484 1.48303 23.127 2.12903 23.772C2.77303 24.417 3.41603 24.874 4.21803 25.179C5.01803 25.482 5.89803 25.668 7.12903 25.728C8.35303 25.786 8.74003 25.8 12 25.8C15.2600 25.8 15.6470 25.786 16.8710 25.728C18.1020 25.668 18.9820 25.482 19.7820 25.179C20.5840 24.874 21.2270 24.417 21.8710 23.772C22.5170 23.127 22.9740 22.484 23.2790 21.682C23.5820 20.882 23.7680 20.002 23.8280 18.772C23.8860 17.548 24.0000 17.161 24.0000 13.9C24.0000 10.639 23.8860 10.252 23.8280 9.027C23.7680 7.797 23.5820 6.917 23.2790 6.116C22.9740 5.314 22.5170 4.672 21.8710 4.028C21.2270 3.383 20.5840 2.926 19.7820 2.621C18.9820 2.317 18.1020 2.132 16.8710 2.072C15.6470 2.014 15.2600 2 12 2ZM12 4.062C15.1690 4.062 15.5210 4.075 16.6980 4.132C17.7730 4.185 18.4570 4.353 18.9180 4.517C19.4880 4.722 19.8780 4.971 20.2720 5.365C20.6660 5.759 20.9150 6.15 21.1200 6.719C21.2840 7.18 21.4520 7.865 21.5050 8.94C21.5620 10.117 21.5750 10.469 21.5750 13.638C21.5750 16.807 21.5620 17.158 21.5050 18.335C21.4520 19.411 21.2840 20.095 21.1200 20.556C20.9150 21.126 20.6660 21.516 20.2720 21.91C19.8780 22.304 19.4880 22.553 18.9180 22.758C18.4570 22.922 17.7730 23.09 16.6980 23.143C15.5210 23.199 15.1690 23.213 12 23.213C8.83103 23.213 8.47903 23.199 7.30203 23.143C6.22703 23.09 5.54303 22.922 5.08203 22.758C4.51203 22.553 4.12203 22.304 3.72803 21.91C3.33403 21.516 3.08503 21.126 2.88003 20.556C2.71603 20.095 2.54803 19.411 2.49503 18.335C2.43803 17.158 2.42503 16.807 2.42503 13.638C2.42503 10.469 2.43803 10.117 2.49503 8.94C2.54803 7.865 2.71603 7.18 2.88003 6.719C3.08503 6.15 3.33403 5.759 3.72803 5.365C4.12203 4.971 4.51203 4.722 5.08203 4.517C5.54303 4.353 6.22703 4.185 7.30203 4.132C8.47903 4.075 8.83103 4.062 12 4.062ZM12 9.479C10.0200 9.479 8.41703 11.082 8.41703 13.062C8.41703 15.042 10.0200 16.646 12 16.646C13.9800 16.646 15.5830 15.042 15.5830 13.062C15.5830 11.082 13.9800 9.479 12 9.479ZM12 14.583C11.1500 14.583 10.4790 13.913 10.4790 13.062C10.4790 12.212 11.1500 11.542 12 11.542C12.8500 11.542 13.5210 12.212 13.5210 13.062C13.5210 13.913 12.8500 14.583 12 14.583ZM18.2920 7.833C18.2920 8.507 17.7490 9.052 17.0730 9.052C16.3980 9.052 15.8540 8.507 15.8540 7.833C15.8540 7.158 16.3980 6.614 17.0730 6.614C17.7490 6.614 18.2920 7.158 18.2920 7.833Z"/></svg>
+        </a>
+      </div>
+      <p class="text-lg font-semibold px-6">Phone: <span class="font-medium text-gray-700">0916 323 5812</span></p>
+      <p class="text-lg font-semibold px-6">Email: <a href="mailto:dankirvymanongsong@gmail.com" class="text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-300">dankirvymanongsong@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer class="bg-gray-800 text-white py-10 px-8">
+    <div class="container mx-auto text-center">
+      <p>&copy; <span id="currentYear"></span> Dan Kirvy P. Manongsong. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Typing animation logic
+    const texts = ["an IT Student", "a Dreamer", "a Problem Solver", "a Passionate Learner"];
+    let currentTextIndex = 0;
+    let typingTextElement = document.getElementById("typing-text");
+
+    function typeText(text, callback) {
+      let i = 0;
+      typingTextElement.textContent = ""; // Clear previous text
+      function type() {
+        if (i < text.length) {
+          typingTextElement.textContent += text.charAt(i);
+          i++;
+          setTimeout(type, 100); // Typing speed
+        } else {
+          setTimeout(callback, 1500); // Pause before erasing
+        }
+      }
+      type();
+    }
+
+    function eraseText(callback) {
+      let text = typingTextElement.textContent;
+      let i = text.length;
+      function erase() {
+        if (i > 0) {
+          typingTextElement.textContent = text.substring(0, i - 1);
+          i--;
+          setTimeout(erase, 50); // Erasing speed
+        } else {
+          setTimeout(callback, 500); // Pause before typing next text
+        }
+      }
+      erase();
+    }
+
+    function startTypingAnimation() {
+      typeText(texts[currentTextIndex], () => {
+        eraseText(() => {
+          currentTextIndex = (currentTextIndex + 1) % texts.length; // Loop through texts
+          startTypingAnimation();
+        });
+      });
+    }
+
+    // Highlight navigation links on scroll and click
+    window.addEventListener('DOMContentLoaded', () => {
+      startTypingAnimation(); // Start typing animation on load
+
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('nav ul li a.nav-link');
+
+      function changeNav() {
+        let index = sections.length;
+
+        while(--index && window.scrollY + 100 < sections[index].offsetTop) {}
+
+        navLinks.forEach((link) => link.classList.remove('active'));
+        if (navLinks[index]) {
+            navLinks[index].classList.add('active');
+        }
+      }
+
+      changeNav(); // Initial call
+      window.addEventListener('scroll', changeNav);
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          // Optional: smooth scroll if not already handled by CSS html {scroll-behavior: smooth;}
+          navLinks.forEach(navLink => navLink.classList.remove('active'));
+          link.classList.add('active');
+        });
+      });
+
+      // Set current year in footer
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
